@@ -1,0 +1,243 @@
+<script>
+    let closeBtn = document.querySelector<HTMLElement>('#closeBtn')
+    let openBtn = document.querySelector<HTMLElement>('#openBtn')
+    let slideMenu = document.querySelector<HTMLElement>('#slideMenu')
+    let coverBg = document.querySelector<HTMLElement>('#coverBg')
+    let inputSearch = document.querySelector<HTMLElement>('#inputSearch')
+    let btnSearch = document.querySelector<HTMLElement>('#btnSearch')
+    let coverInput = document.querySelector<HTMLElement>('#coverInput')
+    let inputVal = document.querySelector<HTMLInputElement>('#inputVal')
+    let clearInput = document.querySelector<HTMLButtonElement>('#clearInput')
+    let searchButton = document.querySelector<HTMLButtonElement>('#searchButton')
+    let urlBtn = document.querySelector<HTMLElement>('#urlBtn')
+    let dropUrl = document.querySelector<HTMLElement>('#dropUrl')
+    let cartBtn = document.querySelector<HTMLElement>('#cartBtn')
+    let dropCart = document.querySelector<HTMLElement>('#dropCart')
+    let heartBtn = document.querySelector<HTMLButtonElement>('#heartBtn')
+    let userBtn = document.querySelector<HTMLButtonElement>('#userBtn')
+    let coverLogin = document.querySelector<HTMLElement>('#coverLogin')
+    let loginForm = document.querySelector<HTMLElement>('#loginForm')
+    let closeForm = document.querySelector<HTMLElement>('#closeForm')
+
+    closeBtn?.addEventListener('click', () => {
+        slideMenu?.classList.add('-translate-x-full')
+        coverBg?.classList.add('translate-x-full')
+    })
+    openBtn?.addEventListener('click', () => {
+        slideMenu?.classList.remove('-translate-x-full')
+        coverBg?.classList.remove('translate-x-full')
+    })
+    btnSearch?.addEventListener('click', () => {
+        inputSearch?.classList.remove('hidden')
+        coverInput?.classList.remove('hidden')
+    })
+    coverInput?.addEventListener('click', () => {
+        inputSearch?.classList.add('hidden')
+        coverInput?.classList.add('hidden')
+    })
+    inputVal?.addEventListener('input', (e:any) => {
+        if(e.target.value.length !== 0) {
+            clearInput?.classList.remove('invisible')
+            searchButton?.classList.remove('invisible')
+            clearInput?.addEventListener('click', () => {
+                    clearInput?.classList.add('invisible')
+                    searchButton?.classList.add('invisible')
+                    e.target.value=""
+            })
+        }
+        else{
+            clearInput?.classList.add('invisible')
+            searchButton?.classList.add('invisible')
+        }
+    })
+    urlBtn?.addEventListener('click', () => {
+        dropUrl?.classList.contains('hidden') ? dropUrl.classList.remove('hidden') : dropUrl?.classList.add('hidden')
+        dropCart?.classList.add('hidden')
+    })
+    cartBtn?.addEventListener('click', () => {
+        dropCart?.classList.contains('hidden') ? dropCart.classList.remove('hidden') : dropCart?.classList.add('hidden')
+        dropUrl?.classList.add('hidden')
+    })
+    heartBtn?.addEventListener('click', () => {
+        coverLogin?.classList.remove('hidden') 
+        loginForm?.classList.remove('hidden') 
+    })
+    userBtn?.addEventListener('click', () => {
+        coverLogin?.classList.remove('hidden') 
+        loginForm?.classList.remove('hidden') 
+    })
+    closeForm?.addEventListener('click',() => {
+        coverLogin?.classList.add('hidden') 
+        loginForm?.classList.add('hidden') 
+    })
+
+
+    
+</script>
+
+
+<!-- Header -->
+<header class="px-8 w-full">
+    <div class="flex flex-col border-b pb-2 pt-4">
+        <div class="flex justify-between">
+            <div class="flex justify-around">
+                <span id="openBtn" class="w-11 h-11 flex items-center justify-center cursor-pointer p-2 transition-colors duration-200 ease-in-out hover:bg-gray-100 rounded-full ml-5">
+                    <img src="/svgs/menu.svg" alt="" class="w-6 h-6">
+                </span>
+                <a href="#top" class="cursor-pointer ml-5">
+                    <img src="/svgs/logo-48-full.svg" alt="logo" class="w-60 h-11">
+                </a>
+                <button id="btnSearch" class="px-6 py-2 ml-5 bg-gray-100 rounded-3xl w-[640px] h-12 flex items-center justify-start hover:bg-gray-300">
+                    <span class="">
+                        <img src="/svgs/search.svg" alt="search icon" class="w-4 h-4">
+                    </span>
+                    <span class="font-roboto text-gray-400 ml-2">Search for Dr.Berg health products</span>
+                </button>
+            </div>
+            <div class="flex justify-around">
+                <span class="relative w-11 h-11 cursor-pointer ml-2.5 p-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 rounded-full flex items-center justify-center">
+                    <img src="/svgs/menu-grid.svg" alt="aaa" id="urlBtn" class="w-6 h-6">
+                    <div id="dropUrl" class="absolute top-10 right-0 w-[200px] z-10 bg-white border shadow-sm py-2.5 hidden">
+                        <button class="px-5 py-2.5 font-roboto text-sm hover:bg-gray-100 w-full flex items-center justify-start">drberg.com</button>
+                        <button class="px-5 py-2.5 font-roboto text-sm hover:bg-gray-100 w-full flex items-center justify-start">courses.drberg.com</button>
+                    </div>
+                </span>
+                <span class="w-11 h-11 cursor-pointer ml-2.5 p-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 rounded-full flex items-center justify-center">
+                    <img src="/svgs/question.svg" alt="" class="w-6 h-6">
+                </span>
+                <span class="w-11 h-11 cursor-pointer ml-2.5 p-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 rounded-full flex items-center justify-center">
+                    <img src="/svgs/heart.svg" alt="aa" id="heartBtn" class="w-6 h-6">
+                </span>
+                <span class="w-11 h-11 cursor-pointer ml-2.5 p-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 rounded-full flex items-center justify-center">
+                    <img src="/svgs/user-icon.svg" alt="aa" id="userBtn" class="w-6 h-6">
+                </span>
+                <span class="w-11 h-11 cursor-pointer ml-2.5 p-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 rounded-full flex items-center justify-center">
+                    <img src="/svgs/cart.svg" alt="aa" id="cartBtn" class="w-6 h-6">
+                    <div id="dropCart" class="absolute top-14 h-fit right-8 bg-white z-50 shadow w-96 rounded p-1 hidden">
+                        <div class="py-4">
+                            <div class="py-6 px-4">
+                                <p class="font-roboto">You have no items in your shopping cart</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="flex justify-between w-7/12 mt-5 ml-20">
+            <span class="cursor-pointer font-roboto font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 ease-in-out">
+                <a href="#top">All products</a>
+            </span>
+            <span class="cursor-pointer font-roboto font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 ease-in-out">
+                <a href="#top">Supplements</a>
+            </span>
+            <span class="cursor-pointer font-roboto font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 ease-in-out">
+                <a href="#top">Powders</a>
+            </span>
+            <span class="cursor-pointer font-roboto font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 ease-in-out">
+                <a href="#top">Bundles</a>
+            </span>
+            <span class="cursor-pointer font-roboto font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 ease-in-out">
+                <a href="#top">Books</a>
+            </span>
+            <span class="cursor-pointer font-roboto font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 ease-in-out">
+                <a href="#top">Digital programs</a>
+            </span>
+            <span class="cursor-pointer font-roboto font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 ease-in-out">
+                <a href="#top">Immune</a>
+            </span>
+            <span class="cursor-pointer font-roboto font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 ease-in-out">
+                <a href="#top">Beauty</a>
+                <span class="px-1 py-0.5 rounded-xl bg-orange-500 text-white text-[10px] absolute -translate-y-1 translate-x-0.5 font-bold">NEW</span>
+            </span>
+            <span class="cursor-pointer font-roboto font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 ease-in-out ml-6">
+                <a href="#top">Deals</a>
+                <span class="px-1 py-0.5 rounded-xl bg-orange-500 text-white text-[10px] absolute -translate-y-1 translate-x-0.5 font-bold">HOT</span>
+            </span>
+        </div>
+    </div>
+    <div id="slideMenu" class="fixed top-0 left-0 h-screen w-full max-w-[30rem] z-50 transition-all duration-300 ease-in-out -translate-x-full">
+        <div class="w-full h-screen xl:max-w-[30rem] bg-white scroll-smooth">
+            <div class="px-7 py-4 flex items-center">
+                <span id="closeBtn" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 cursor-pointer">
+                    <svg  width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Menu / Close_MD">
+                        <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                </span>
+                <img src="/svgs/logo-48-small.svg" alt="aaa" class="w-[132px] h-11 cursor-pointer ml-10">
+            </div>
+            <div class="overflow-y-auto pb-5 max-h-[calc(100%-124px)]">
+                <div class="flex flex-col pt-5 px-[30px] overflow-y-auto">
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 hover:text-gray-600">All Products <span class="font-normal text-blue-400">(84)</span> </a>
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 mt-6 hover:text-gray-600">Supplements <span class="font-normal text-blue-400">(49)</span> </a>
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 mt-6 hover:text-gray-600">Powders <span class="font-normal text-blue-400">(14)</span> </a>
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 mt-6 hover:text-gray-600">Bundles <span class="font-normal text-blue-400">(15)</span> </a>
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 mt-6 hover:text-gray-600">Books <span class="font-normal text-blue-400">(6)</span> </a>
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 mt-6 hover:text-gray-600">Digital Programs <span class="font-normal text-blue-400">(4)</span> </a>
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 mt-6 hover:text-gray-600">Devices <span class="font-normal text-blue-400">(2)</span> </a>
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 mt-6 hover:text-gray-600">Immune <span class="font-normal text-blue-400">(6)</span> </a>
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 mt-6 hover:text-gray-600">Beauty 
+                        <span class="font-normal text-blue-400">(5)</span> 
+                        <span class="px-1 py-1 h-5 absolute -translate-y-7 translate-x-24 flex items-center justify-center rounded-full bg-orange-500 text-white text-[10px]">NEW</span>
+                    </a>
+                    <a href="#" class="font-roboto font-bold text-xl ml-20 mt-6 hover:text-gray-600">Deals
+                        <span class="px-1 py-1 h-5 absolute -translate-y-7 translate-x-14 flex items-center justify-center rounded-full bg-orange-500 text-white text-[10px]">HOT</span>
+                    </a>
+                </div>
+            </div>
+            
+                
+        </div>
+    </div>
+    <div id="coverBg" class="fixed top-0 left-0 h-screen w-screen bg-black opacity-50 z-40 transition-all duration-300 ease-in-out translate-x-full"></div>
+    <div id="inputSearch" class="fixed top-0 left-0 h-fit w-fit z-50 lg:pr-[60%] hidden">
+        <div id="input" class="absolute top-[300px] left-1/2 -translate-y-1/2 w-[45rem] px-4 lg:px-4 md:px-16">
+            <div class="flex justify-start items-center space-x-1.5 border w-auto py-3 px-3 md:pl-5 bg-white rounded-[36px]">
+                <img loading="lazy" src="/svgs/search.svg" alt="search icon" class="w-4 h-4">
+                <input id="inputVal" type="text" placeholder="Search for Dr.Berg health products" class="w-full h-full bg-white py-1 border-none focus:ring-0 outline-none ml-2">
+                <button id="clearInput" class="flex items-center justify-center p-1 rounded-full bg-slate-200 invisible">
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Menu / Close_MD">
+                        <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                </button>
+                <button id="searchButton" class="bg-sky-600 flex items-center justify-center ml-4 px-2.5 py-1 rounded-2xl invisible">
+                    <svg fill="#fff" height="16px" width="32px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	                viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                    <polygon points="213.3,205.3 213.3,77.3 0,248 213.3,418.7 213.3,290.7 512,290.7 512,205.3 "/>
+                    </svg>
+                    <p class="text-white font-roboto font-semibold text-xs">Search</p>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="coverInput" class="fixed top-0 left-0 h-screen w-screen z-40 bg-black opacity-50 hidden"></div>
+    <div id="loginForm" class="fixed top-0 left-0 w-full h-full z-50 hidden">
+        <div class="w-[341px] overflow-auto max-h-[90vh] bg-white border border-[#D3D6D7] rounded-[3px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div class="flex justify-end mr-2.5 mt-4">
+                <svg class="cursor-pointer" id="closeForm"  width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Menu / Close_MD">
+                    <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    </svg>
+            </div>
+            <div class="px-5 pb-5 font-roboto">
+                <h1 class="font-roboto font-bold text-[28px] my-[15px]">Sign in or Register</h1>
+                <h3 class="font-roboto font-semibold text-md">Your email address</h3>
+                <div class="relative">
+                    <input type="email" class="my-[20px] p-[27px_13px_10px] bg-transparent h-[54px] w-[100%] text-[14px] rounded-[3px] border-[#ddd] border-solid border-[1px] focus:outline-none focus:shadow-[0px_0px_3px] focus:shadow-[#0091a8] focus-visible:outline-none focus-visible:shadow-[0px_0px_3px] focus-visible:shadow-[#0091a8] focus:ring-0 focus:ring-offset-0 focus:border-0">
+                    <label for="" class="absolute top-[25px] left-[15px] text-[#9b9b9b] duration-200 transition-all text-[12px]">EMAIL ADDRESS</label>
+                </div>
+                <button class="text-[#013253] border-[#013253] border-[1px] border-solid m-0 p-[15px] w-[100%] text-[14px] font-bold transition-all duration-[0.2s] hover:bg-[#013253] hover:text-[#fff]">CONTINUE WITH EMAIL</button>
+                <p class="text-left m-[17px_0_22px] text-[#8f8f8f] text-[12px]">If you do not have an account, don’t worry, you can create one in the following step.</p>
+            </div>
+        </div>
+    </div>
+    <div id="coverLogin" class="fixed top-0 left-0 h-screen w-screen z-40 bg-black opacity-50 hidden"></div>
+    
+    
+                
+</header>

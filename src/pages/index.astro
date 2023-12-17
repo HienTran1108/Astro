@@ -1,10 +1,386 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Item from '../components/Item.astro';
 ---
 
 <Layout title="Welcome to My project">
-	<main>
-	</main>
+	<div class="mx-32 px-4">
+		<div class="pt-8 pb-14">
+			<h1 class="font-roboto font-bold text-xl">EXPLORE DR.BERG</h1>
+			<div class="p-0.5 mt-6 grid grid-cols-4 gap-5">
+				<a href="" class="flex items-center rounded-md transition-all duration-200 ease-in-out hover:shadow-lg">
+					<span>
+						<img src="/images/supplements.avif" alt="" class="w-[90px] h-[90px] object-cover">
+					</span>
+					<div class="flex flex-col font-roboto py-2 pl-2.5">
+						<h2 class="font-bold text-sm">SUPPLEMENTS</h2>
+						<p class="mt-2 text-xs text-gray-400">Nutrient-dense and mineral rich. <br>High quality source ingredients.</p>
+					</div>
+				</a>
+				<a href="" class="flex items-center rounded-md transition-all duration-200 ease-in-out hover:shadow-lg">
+					<span>
+						<img src="/images/packages-and-kits.avif" alt="" class="w-[90px] h-[90px] object-cover">
+					</span>
+					<div class="flex flex-col font-roboto py-2 pl-2.5">
+						<h2 class="font-bold text-sm">PACKAGES AND KITS</h2>
+						<p class="mt-2 text-xs text-gray-400">Body Type Packages and Kits, <br>Uniquely formulated by Dr Berg</p>
+					</div>
+				</a>
+				<a href="" class="flex items-center rounded-md transition-all duration-200 ease-in-out hover:shadow-lg">
+					<span>
+						<img src="/images/books.avif" alt="" class="w-[90px] h-[90px] object-cover">
+					</span>
+					<div class="flex flex-col font-roboto py-2 pl-2.5">
+						<h2 class="font-bold text-sm">BOOKS</h2>
+						<p class="mt-2 text-xs text-gray-400">Author of the best selling The 7 <br>Principle of Fat Burning</p>
+					</div>
+				</a>
+				<a href="" class="flex items-center rounded-md transition-all duration-200 ease-in-out hover:shadow-lg">
+					<span>
+						<img src="/images/digital-programs.avif" alt="" class="w-[90px] h-[90px] object-cover object-left">
+					</span>
+					<div class="flex flex-col font-roboto py-2 pl-2.5">
+						<h2 class="font-bold text-sm">DIGITAL PROGRAMS</h2>
+						<p class="mt-2 text-xs text-gray-400">Exclusive Membership, Coaching,<br>Meal Maker and Keto</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="pb-10">
+			<img src="/images/banner-saleoff.avif" alt="" class="cursor-pointer rounded-t-lg">
+		</div>
+		<div class="relative w-full cursor-pointer">
+			<img src="/images/vid.avif" alt="">
+			<button class="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+				<img src="/svgs/play-button.svg" alt="" class="w-28 h-28 hover:scale-125">
+			</button>
+		</div>
+		<div class="mb-12">
+			<section class="pt-14 flex items-center">
+				<div class="pr-2.5 min-w-[400px] cursor-pointer">
+					<img src="/images/vitaminbanner.avif" alt="" class="w-[400px] h-[400px] object-cover">
+				</div>
+				<div class="pl-2.5 font-roboto">
+					<span class="p-1 rounded-sm text-white bg-orange-500 text-sm font-base">NEW LAUNCH</span>
+					<h1 class="mt-2 font-bold text-[32px]">Whole Food Multivitamin with Minerals (Previously known as Keto Energy)</h1>
+					<p class="mt-4 text-base">Find renewed energy and vitality with Dr. Berg Whole Food Multivitamin with Minerals. This unique formula, previously known as Keto Energy, now contains our powerful trace mineral complex. Every serving delivers a premium blend of whole food fruits and vegetables, our proprietary trace minerals complex, and Krebs cycle powder for maximum benefits. Each bottle contains 30 servings.</p>
+					<a href="" class="flex items-center justify-center mt-5 w-60 h-12 border-2 border-orange-500 rounded-sm font-bold text-orange-500 hover:bg-orange-500 hover:text-white">SHOP NOW</a>
+				</div>
+			</section>
+			<section class="pt-14">
+				<h1 class="font-roboto font-bold text-xl">NEWEST PRODUCTS</h1>
+				<div class="mt-7 grid grid-cols-5 gap-3">
+					<Item src='/images/vitamin1.jpg' title='Natural Vitamin B1+' delprice={25.99} discount={7.70} price={23.99}/>
+					<Item src='/images/vitamin2.avif' title='Emergency Immune Suport' delprice={39.99} discount={30.01} price={27.99}/>
+					<Item src='/images/vitamin3.avif' title='Whole Food Multivitamin with Minerals (Previously...' delprice={39.95} discount={12.42} price={34.99}/>
+					<Item src='/images/vitamin4.avif' title='Natural Prenatal Multivitamin' delprice={45.59} discount={16.67} price={37.99}/>
+					<Item src='/images/vitamin5.avif' title='Sports Hydration Electrolytes' delprice={31.19} discount={16.67} price={25.99}/>
+				</div>
+			</section>
+			<section class="pt-14">
+				<div class="grid grid-cols-2 bg-gray-100 rounded-md">
+					<div class="flex items-center">
+						<div class="p-2">
+							<img src="/svgs/user2.svg" alt="" class="w-20 h-20">
+						</div>
+						<div class="py-7 font-roboto">
+							<h1 class="font-bold text-xl">Welcome! Don't be a stranger</h1>
+							<p class="text-xs text-gray-500 mt-1">Login your account to fully enjoy drberg.com shopping experience.</p>
+						</div>
+					</div>
+					<div class="pb-5 pl-5 pr-5 mt-7 flex justify-end items-center">
+						<a href="" class="flex items-center font-roboto text-sm hover:underline mr-6">
+							<span>Create new account</span>
+							<span>
+								<img src="/svgs/doubleright.svg" alt="" class="w-2 h-2 ml-1.5">
+							</span>
+						</a>
+						<button class="p-3 w-[90px] h-[40px] flex items-center justify-center font-roboto font-bold text-white bg-blue-700 rounded-md hover:bg-blue-500 transition-colors duration-300 ease-in-out">SIGN IN</button>
+					</div>
+				</div>
+			</section>
+			<section class="pt-14">
+				<h1 class="font-roboto font-bold text-xl">RECOMMENDED FOR YOU</h1>
+				<div class="mt-7 grid grid-cols-5 gap-3">
+					<div class="rounded-lg border-2 border-gray-100 hover:border-blue-200 cursor-pointer">
+						<div class="p-5 z-0 relative">
+							<img src="/images/vitamin6.avif" alt="" class="object-cover">
+							<svg class="w-7 h-7 hover:fill-black absolute top-5 right-5 group" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<!-- <span class="absolute top-10 right-12 z-50 font-roboto text-white bg-black p-1 text-xs">Add to Wish List</span> -->
+							<span class="absolute top-5 left-5 rounded-md font-roboto text-white bg-orange-400 p-1 text-xs">Best Seller</span>
+
+						</div>
+						<div class="py-3 px-4">
+							<div class="flex items-center">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<span class="text-blue-700 ml-3">5 (xxx)</span>
+							</div>
+							<h1 class="font-roboto font-bold text-base mt-5 mb-2 min-h-[3rem] hover:underline">Nutritional Yeast Tablets</h1>
+							<span class="font-roboto text-xs block mb-3"><del>$33.31</del> -18.97%</span>
+							<span class="font-roboto text-base font-semibold block">$26.99</span>
+							<a href="" class="flex items-center text-sm underline font-roboto font-semibold text-sky-600 hover:text-sky-500">
+								<span>View details</span>
+								<svg class="w-2 h-2 hover:fill-sky-500 ml-1 mt-1" fill="#0284c7" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+									width="800px" height="800px" viewBox="0 0 30.725 30.725"
+									xml:space="preserve">
+								<g>
+									<path d="M13.832,30.725c-0.642,0-1.279-0.244-1.769-0.732c-0.978-0.977-0.978-2.56,0-3.535l11.095-11.093L12.064,4.268
+										c-0.978-0.979-0.978-2.562,0-3.535c0.978-0.978,2.56-0.978,3.535,0l14.628,14.631L15.6,29.992
+										C15.111,30.48,14.473,30.725,13.832,30.725z M4.766,29.992l14.628-14.628L4.766,0.733c-0.979-0.978-2.561-0.978-3.535,0
+										c-0.978,0.977-0.978,2.56,0,3.535l11.095,11.096L1.23,26.457c-0.978,0.978-0.978,2.561,0,3.535
+										c0.488,0.488,1.127,0.732,1.769,0.732C3.64,30.725,4.275,30.48,4.766,29.992z"/>
+								</g>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="rounded-lg border-2 border-gray-100 hover:border-blue-200 cursor-pointer">
+						<div class="p-5 z-0 relative">
+							<img src="/images/vitamin7.avif" alt="" class="object-cover">
+							<svg class="w-7 h-7 hover:fill-black absolute top-5 right-5 group" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<!-- <span class="absolute top-10 right-12 z-50 font-roboto text-white bg-black p-1 text-xs">Add to Wish List</span> -->
+							<span class="absolute top-5 left-5 rounded-md font-roboto text-white bg-orange-400 p-1 text-xs">Best Seller</span>
+
+						</div>
+						<div class="py-3 px-4">
+							<div class="flex items-center">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<span class="text-blue-700 ml-3">5 (xxx)</span>
+							</div>
+							<h1 class="font-roboto font-bold text-base mt-5 mb-2 min-h-[3rem] hover:underline">Gallbladder Formula Extra Strength</h1>
+							<span class="font-roboto text-xs block mb-3"><del>$47.29</del> -21.78%</span>
+							<span class="font-roboto text-base font-semibold block">$36.99</span>
+							<a href="" class="flex items-center text-sm underline font-roboto font-semibold text-sky-600 hover:text-sky-500">
+								<span>View details</span>
+								<svg class="w-2 h-2 hover:fill-sky-500 ml-1 mt-1" fill="#0284c7" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+									width="800px" height="800px" viewBox="0 0 30.725 30.725"
+									xml:space="preserve">
+								<g>
+									<path d="M13.832,30.725c-0.642,0-1.279-0.244-1.769-0.732c-0.978-0.977-0.978-2.56,0-3.535l11.095-11.093L12.064,4.268
+										c-0.978-0.979-0.978-2.562,0-3.535c0.978-0.978,2.56-0.978,3.535,0l14.628,14.631L15.6,29.992
+										C15.111,30.48,14.473,30.725,13.832,30.725z M4.766,29.992l14.628-14.628L4.766,0.733c-0.979-0.978-2.561-0.978-3.535,0
+										c-0.978,0.977-0.978,2.56,0,3.535l11.095,11.096L1.23,26.457c-0.978,0.978-0.978,2.561,0,3.535
+										c0.488,0.488,1.127,0.732,1.769,0.732C3.64,30.725,4.275,30.48,4.766,29.992z"/>
+								</g>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="rounded-lg border-2 border-gray-100 hover:border-blue-200 cursor-pointer">
+						<div class="p-5 z-0 relative">
+							<img src="/images/vitamin8.avif" alt="" class="w-[193px] h-[193px] object-contain object-center">
+							<svg class="w-7 h-7 hover:fill-black absolute top-5 right-5 group" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<!-- <span class="absolute top-10 right-12 z-50 font-roboto text-white bg-black p-1 text-xs">Add to Wish List</span> -->
+
+						</div>
+						<div class="py-3 px-4">
+							<div class="flex items-center">
+								<img loading="lazy" src="/svgs/star.svg" width="" height="123" alt="12312" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<span class="text-blue-700 ml-3">5 (xxx)</span>
+							</div>
+							<h1 class="font-roboto font-bold text-base mt-5 mb-2 min-h-[3rem] hover:underline">Trace Minerals Enhanced</h1>
+							<span class="font-roboto text-xs block mb-3"><del>$47.29</del> -18.97%</span>
+							<span class="font-roboto text-base font-semibold block">$36.99</span>
+							<a href="" class="flex items-center text-sm underline font-roboto font-semibold text-sky-600 hover:text-sky-500">
+								<span>View details</span>
+								<svg class="w-2 h-2 hover:fill-sky-500 ml-1 mt-1" fill="#0284c7" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+									width="800px" height="800px" viewBox="0 0 30.725 30.725"
+									xml:space="preserve">
+								<g>
+									<path d="M13.832,30.725c-0.642,0-1.279-0.244-1.769-0.732c-0.978-0.977-0.978-2.56,0-3.535l11.095-11.093L12.064,4.268
+										c-0.978-0.979-0.978-2.562,0-3.535c0.978-0.978,2.56-0.978,3.535,0l14.628,14.631L15.6,29.992
+										C15.111,30.48,14.473,30.725,13.832,30.725z M4.766,29.992l14.628-14.628L4.766,0.733c-0.979-0.978-2.561-0.978-3.535,0
+										c-0.978,0.977-0.978,2.56,0,3.535l11.095,11.096L1.23,26.457c-0.978,0.978-0.978,2.561,0,3.535
+										c0.488,0.488,1.127,0.732,1.769,0.732C3.64,30.725,4.275,30.48,4.766,29.992z"/>
+								</g>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="rounded-lg border-2 border-gray-100 hover:border-blue-200 cursor-pointer">
+						<div class="p-5 z-0 relative">
+							<img src="/images/vitamin9.avif" alt="" class="object-cover">
+							<svg class="w-7 h-7 hover:fill-black absolute top-5 right-5 group" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<!-- <span class="absolute top-10 right-12 z-50 font-roboto text-white bg-black p-1 text-xs">Add to Wish List</span> -->
+
+
+						</div>
+						<div class="py-3 px-4">
+							<div class="flex items-center">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<span class="text-blue-700 ml-3">5 (xxx)</span>
+							</div>
+							<h1 class="font-roboto font-bold text-base mt-5 mb-2 min-h-[3rem] hover:underline">Cod Liver Oil Capsules</h1>
+							<span class="font-roboto text-xs block mb-3"><del>$33.31</del> -37.97%</span>
+							<span class="font-roboto text-base font-semibold block">$24.99</span>
+							<a href="" class="flex items-center text-sm underline font-roboto font-semibold text-sky-600 hover:text-sky-500">
+								<span>View details</span>
+								<svg class="w-2 h-2 hover:fill-sky-500 ml-1 mt-1" fill="#0284c7" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+									width="800px" height="800px" viewBox="0 0 30.725 30.725"
+									xml:space="preserve">
+								<g>
+									<path d="M13.832,30.725c-0.642,0-1.279-0.244-1.769-0.732c-0.978-0.977-0.978-2.56,0-3.535l11.095-11.093L12.064,4.268
+										c-0.978-0.979-0.978-2.562,0-3.535c0.978-0.978,2.56-0.978,3.535,0l14.628,14.631L15.6,29.992
+										C15.111,30.48,14.473,30.725,13.832,30.725z M4.766,29.992l14.628-14.628L4.766,0.733c-0.979-0.978-2.561-0.978-3.535,0
+										c-0.978,0.977-0.978,2.56,0,3.535l11.095,11.096L1.23,26.457c-0.978,0.978-0.978,2.561,0,3.535
+										c0.488,0.488,1.127,0.732,1.769,0.732C3.64,30.725,4.275,30.48,4.766,29.992z"/>
+								</g>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="rounded-lg border-2 border-gray-100 hover:border-blue-200 cursor-pointer">
+						<div class="p-5 z-0 relative">
+							<img src="/images/vitamin10.avif" alt="" class="object-cover">
+							<svg class="w-7 h-7 hover:fill-black absolute top-5 right-5 group" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<!-- <span class="absolute top-10 right-12 z-50 font-roboto text-white bg-black p-1 text-xs">Add to Wish List</span> -->
+							<span class="absolute top-5 left-5 rounded-md font-roboto text-white bg-orange-400 p-1 text-xs">Best Seller</span>
+
+						</div>
+						<div class="py-3 px-4">
+							<div class="flex items-center">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/star.svg" alt="" class="w-5 h-5">
+								<span class="text-blue-700 ml-3">5 (xxx)</span>
+							</div>
+							<h1 class="font-roboto font-bold text-base mt-5 mb-2 min-h-[3rem] hover:underline">Hair Formula</h1>
+							<span class="font-roboto text-xs block mb-3"><del>$54.99</del> -28.97%</span>
+							<span class="font-roboto text-base font-semibold block">$39.99</span>
+							<a href="" class="flex items-center text-sm underline font-roboto font-semibold text-sky-600 hover:text-sky-500">
+								<span>View details</span>
+								<svg class="w-2 h-2 hover:fill-sky-500 ml-1 mt-1" fill="#0284c7" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+									width="800px" height="800px" viewBox="0 0 30.725 30.725"
+									xml:space="preserve">
+								<g>
+									<path d="M13.832,30.725c-0.642,0-1.279-0.244-1.769-0.732c-0.978-0.977-0.978-2.56,0-3.535l11.095-11.093L12.064,4.268
+										c-0.978-0.979-0.978-2.562,0-3.535c0.978-0.978,2.56-0.978,3.535,0l14.628,14.631L15.6,29.992
+										C15.111,30.48,14.473,30.725,13.832,30.725z M4.766,29.992l14.628-14.628L4.766,0.733c-0.979-0.978-2.561-0.978-3.535,0
+										c-0.978,0.977-0.978,2.56,0,3.535l11.095,11.096L1.23,26.457c-0.978,0.978-0.978,2.561,0,3.535
+										c0.488,0.488,1.127,0.732,1.769,0.732C3.64,30.725,4.275,30.48,4.766,29.992z"/>
+								</g>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="pt-14">
+				<h1 class="font-roboto font-bold text-xl">IN THE SPOTLIGHT</h1>
+				<div class="mt-7 grid grid-cols-5 gap-3">
+					<Item src='/images/vitamin11.avif' title='Electrolyte Powder Lemonade 100 Servings' delprice={58.37} discount={22.92} price={44.99}/>
+					<Item src='/images/vitamin9.avif' title='Cod Liver Oil Capsules' delprice={39.99} discount={37.29} price={24.99}/>
+					<Item src='/images/vitamin5.avif' title='Sport Hydration Electrolytes' delprice={31.95} discount={16.42} price={25.99}/>
+					<Item src='/images/vitamin12.avif' title='Chewable Vitamin C Complex' delprice={34.59} discount={16.67} price={29.99}/>
+					<Item src='/images/vitamin13.avif' title='Organic Raw Wheatgrass Juice Powder' delprice={53.79} discount={21.94} price={41.99}/>
+				</div>
+			</section>
+			<section class="pt-14">
+				<h1 class="font-roboto font-bold text-xl">BE A PART OF OUR COMMUNITY!</h1>
+				<p class="font-roboto mt-3">Post a photo of you and your Dr. Berg products for a chance to be featured on our page. Tag @drericberg and use hashtag #drberglove</p>
+				<div class="grid grid-cols-4 gap-5 mt-7">
+					<img src="/images/tag1.avif" alt="">
+					<img src="/images/tag2.avif" alt="">
+					<img src="/images/tag3.avif" alt="">
+					<img src="/images/tag4.avif" alt="">
+				</div>
+			</section>
+			<section class="pt-14">
+				<h1 class="font-roboto font-bold text-xl">ON THE WEB</h1>
+				<p class="font-roboto mt-3 font-bold text-2xl">4.89 Overall</p>
+				<p class="font-roboto mt-3">Out of 21350 Reviews</p>
+				<div class="mt-7 flex justify-around">
+					<a href="" class="mr-6 py-6 px-7 border flex items-center">
+						<span>
+							<img src="/svgs/google.svg" alt="" class="w-9 h-9">
+						</span>
+						<div class="flex flex-col ml-5">
+							<div class="flex items-center">
+								<span class="font-roboto text-gray-400 mr-2">4.9</span>
+								<img src="/svgs/yellowstar.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/yellowstar.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/yellowstar.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/yellowstar.svg" alt="" class="w-5 h-5">
+								<img src="/svgs/yellowstar.svg" alt="" class="w-5 h-5">
+							</div>
+							<span class="font-roboto text-sky-600 underline font-semibold text-sm">View 5121 reviews</span>
+						</div>
+					</a>
+					<a href="" class="mr-6 py-6 px-7 border flex items-center">
+						<span>
+							<img src="/images/dr1.png" alt="" class="w-12 h-12">
+						</span>	
+						<div class="flex flex-col ml-5">
+							<h1 class="flex items-center font-roboto font-bold text-xs">DR. Eric Berg DC 
+								<span>
+									<img src="/svgs/checked.svg" alt="" class="w-4 h-4 ml-2">
+								</span>
+							</h1>
+							<p class="font-roboto text-[11px] text-gray-800 mt-2">Published on Dec 15, 2016</p>
+						</div>
+						<span class="font-roboto font-bold text-red-700 ml-8">SUBSCRIBE 11.2M</span>
+					</a>
+					<a href="" class="mr-6 py-6 px-7 border flex items-center">
+						<div class="flex items-center">
+							<img src="/images/dr2.png" alt="" class="w-12 h-12">
+							<div class="flex flex-col ml-5">
+								<h1 class="flex items-center font-roboto font-bold text-xs">DR. Eric Berg 
+									<span>
+										<img src="/svgs/checked.svg" alt="" class="w-4 h-4 ml-2">
+									</span>
+								</h1>
+								<p class="font-roboto text-[11px] text-gray-800 mt-2">502k Like this</p>
+							</div>
+						</div>
+						<div class="flex items-center ml-10">
+							<img src="/svgs/fbcolor.svg" alt="" class="mr-5">
+							<span class="font-roboto text-gray-600">Become a supporter</span>
+						</div>
+					</a>
+				</div>
+			</section>
+		</div>
+		<div class="pt-12 pb-5 bg-gray-100 rounded-sm flex flex-col items-center font-roboto">
+			<h1 class="font-bold text-xl">20 million+ Subscribers and Followers</h1>
+			<p class="text-xs text-gray-500 mt-3">Join our 20+ Million members. You will receive our latest news.</p>
+			<div class="flex items-center justify-center mt-8">
+				<input type="text" placeholder="Enter your email" class="outline-none px-6 py-2.5 border w-[515px] h-[64px]">
+				<button class="flex items-center justify-center w-[155px] h-[64px] text-white font-medium bg-gray-800 hover:bg-gray-600">
+					<img src="/svgs/letter.svg" alt="" class="w-5 h-5 mr-3">
+					SUBSCRIBE
+				</button>
+			</div>
+			
+		</div>
+	</div>
 </Layout>
 
